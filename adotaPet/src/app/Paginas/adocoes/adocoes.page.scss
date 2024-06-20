@@ -1,0 +1,116 @@
+.adoptions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  text-align: center;
+  color: var(--primary-color);
+  padding: 20px;
+  padding-bottom: 70px; /* Espaço para o rodapé */
+}
+
+.adoptions-title {
+  margin-bottom: 20px;
+  font-size: 32px;
+  color: var(--primary-color);
+}
+
+.schedule-button {
+  --background: var(--secondary-color);
+  --color: var(--black-color);
+  font-weight: bold;
+  height: 50px;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  width: 100%;
+  max-width: 600px;
+  font-size: 24px;
+  color: var(--primary-color);
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.adoption-card {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px var(--black-color);
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.adoption-info {
+  flex: 1;
+  text-align: left;
+  color: var(--black-color);
+}
+
+.adoption-info h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.adoption-info p {
+  margin: 5px 0;
+}
+
+.cancel-button, .adopted-button {
+  --color: var(--black-color);
+  font-weight: bold;
+  height: 40px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.cancel-button {
+  --background: #d9534f;
+}
+
+.adopted-button {
+  --background: var(--text-color);
+}
+
+/* Estilos do rodapé */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  }
+
+.footer-toolbar {
+  --background: var(--primary-color);
+  --color: var(--background-color);
+  padding: 0;
+}
+
+.footer-tab-bar {
+  --background: var(--primary-color);
+  --color: var(--third-color);
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-tab-bar ion-tab-button {
+  --color: var(--background-color);
+}
+
+.footer-tab-bar ion-tab-button:hover ion-icon,
+.footer-tab-bar ion-tab-button:hover ion-label {
+  color: var(--third-color);
+}

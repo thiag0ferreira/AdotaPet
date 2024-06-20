@@ -1,0 +1,93 @@
+.logo {
+  box-shadow: 0 5px 5px 0 var(--black-color);
+  border-radius: 0 0 14px 14px;
+  margin-bottom: 20px;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  color: var(--primary-color);
+  padding: 20px;
+  padding-bottom: 70px; /* Espaço para o rodapé */
+}
+
+.profile-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.personal-info h2 {
+  font-size: 20px;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.personal-info p {
+  margin: 5px 0;
+  color: var(--text-color);
+}
+
+.divider {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid var(--gray-color);
+}
+
+.preferences h2 {
+  font-size: 20px;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.preferences ul {
+  list-style: none;
+  padding: 0;
+}
+
+.preferences li {
+  margin: 5px 0;
+  color: var(--text-color);
+}
+
+/* Estilos do rodapé */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  }
+
+.footer-toolbar {
+  --background: var(--primary-color);
+  --color: var(--background-color);
+  padding: 0;
+}
+
+.footer-tab-bar {
+  --background: var(--primary-color);
+  --color: var(--background-color);
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-tab-bar ion-tab-button {
+  --color: var(--background-color);
+}
+
+.footer-tab-bar ion-tab-button:hover ion-icon,
+.footer-tab-bar ion-tab-button:hover ion-label {
+  color: var(--text-color);
+}

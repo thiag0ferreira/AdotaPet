@@ -1,0 +1,82 @@
+<ion-content class="ion-padding">
+  <div class="search-container">
+    <img src="./assets/icon/adotapet.png" alt="AdotaPet" class="logo">
+
+    <div class="search-box">
+      <ion-item class="search-item">
+        <ion-input class="search-input" type="text" placeholder="Digite o animal que procura"></ion-input>
+      </ion-item>
+      <ion-item class="search-item">
+        <ion-input class="search-input" type="text" placeholder="Digite sua localização"></ion-input>
+      </ion-item>
+      <ion-button class="search-button" expand="block"><strong>Buscar</strong></ion-button>
+    </div>
+
+    <h2 class="results-title"><strong>Resultado da busca</strong></h2>
+
+    <div class="result-card">
+      <img src="./assets/dog1.jpg" alt="Profile" class="profile-image">
+      <div class="result-info">
+        <h2>Suki</h2>
+        <p>Cachorro</p>
+      </div>
+      <ion-button class="adopt-button">Solicitar Adoção</ion-button>
+    </div>
+
+    <div class="result-card">
+      <img src="./assets/cat.jpg" alt="Profile" class="profile-image">
+      <div class="result-info">
+        <h2>Chiquinha</h2>
+        <p>Gata</p>
+      </div>
+      <ion-button class="adopt-button">Solicitar Adoção</ion-button>
+    </div>
+
+    <div class="result-card">
+      <img src="./assets/dog2.png" alt="Profile" class="profile-image">
+      <div class="result-info">
+        <h2>Totó</h2>
+        <p>Cachorro</p>
+      </div>
+      <ion-button class="adopt-button">Solicitar Adoção</ion-button>
+    </div>
+
+    <div class="result-card">
+      <img src="./assets/dog3.jpg" alt="Profile" class="profile-image">
+      <div class="result-info">
+        <h2>Sila</h2>
+        <p>Gata</p>
+      </div>
+      <ion-button class="adopt-button">Solicitar Adoção</ion-button>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <ion-footer class="footer">
+    <ion-toolbar class="footer-toolbar">
+      <ion-tabs>
+        <ion-tab-bar slot="bottom" class="footer-tab-bar">
+          <ion-tab-button tab="inicio" (click)="bemvindo()">
+            <ion-icon name="home"></ion-icon>
+            <ion-label>Início</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="consultas" (click)="adocoes()">
+            <ion-icon name="calendar"></ion-icon>
+            <ion-label>Consultas</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="explorar" (click)="buscar()">
+            <ion-icon name="search"></ion-icon>
+            <ion-label>Explorar</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="perfil"  (click)="perfil()">
+            <ion-icon name="person"></ion-icon>
+            <ion-label>Perfil</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

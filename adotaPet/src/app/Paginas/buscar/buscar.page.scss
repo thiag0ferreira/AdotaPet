@@ -1,0 +1,137 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  color: var(--primary-color);
+  padding: 20px;
+  padding-bottom: 70px; /* Espaço para o rodapé */
+}
+
+.logo {
+  box-shadow: 0 10px 10px 0 var(--black-color);
+  border-radius: 0 0 14px 14px;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.search-item {
+  margin-bottom: 10px;
+  --background: none;
+  --color: var(--primary-color);
+}
+
+.search-input {
+  width: 100%;
+  background-color: var(--color-input);
+  padding: 10px;
+  margin: 10px 0;
+  color: var(--black-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--gray-color);}
+
+.search-button {
+  box-shadow: 0 2px 4px var(--black-color);
+  --background: var(--secondary-color);
+  --color: var(--black-color);
+  font-weight: bold;
+  height: 50px;
+  font-size: 18px;
+}
+
+.search-button:hover {
+  --background: #00a999;
+}
+
+.results-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.result-card {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px var(--black-color);
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.result-info {
+  flex: 1;
+  text-align: left;
+  color: var(--black-color);
+
+}
+
+.result-info h2 {
+  font-size: 20px;
+  margin: 0;
+
+}
+
+.result-info p {
+  margin: 5px 0;
+
+}
+
+.adopt-button {
+  --color: var(--black-color);
+  font-weight: bold;
+  height: 40px;
+  font-size: 16px;
+  --background: var(--primary-color);
+  box-shadow: 0 2px 4px var(--black-color);
+  border-radius: 10px;
+}
+
+/* Estilos do rodapé */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  }
+
+.footer-toolbar {
+  --background: var(--primary-color);
+  --color: var(--background-color);
+  padding: 0;
+}
+
+.footer-tab-bar {
+  --background: var(--primary-color);
+  --color: var(--background-color);
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-tab-bar ion-tab-button {
+  --color: var(--background-color);
+}
+
+.footer-tab-bar ion-tab-button:hover ion-icon,
+.footer-tab-bar ion-tab-button:hover ion-label {
+  color: var(--text-color);
+}
