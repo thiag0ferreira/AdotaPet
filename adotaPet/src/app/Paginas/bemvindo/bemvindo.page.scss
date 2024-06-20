@@ -6,6 +6,8 @@
   text-align: center;
   color: var(--primary-color);
   padding: 20px;
+  padding-bottom: 40px;
+
 }
 
 .logo {
@@ -23,11 +25,14 @@
   width: 100%;
   max-width: 400px;
   margin-bottom: 20px;
+  background: var(--primary-color); /* Defina a cor de fundo desejada */
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .search-item {
   width: 100%;
-  --background: var(--background-color);
+  --background: var(--primary-color);
   --inner-border-width: 0px;
   --border-color: transparent;
   margin-bottom: 10px;
@@ -35,7 +40,7 @@
 
 .search-input {
   width: 100%;
-  background: var(--gray-color);
+  background: var(--background-color);
   color: var(--black-color);
   border-radius: 8px;
   padding-left: 10px;
@@ -47,7 +52,7 @@
   font-weight: bold;
   height: 50px;
   font-size: 18px;
-  box-shadow: 0 2px 4px var(--gray-color);
+  box-shadow: 0 2px 4px var(--primary-color);
   margin-top: 10px;
 }
 

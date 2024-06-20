@@ -6,6 +6,7 @@
   text-align: center;
   color: var(--primary-color);
   padding: 20px;
+  padding-bottom: 40px;
 }
 
 .logo {
@@ -44,7 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--gray-color);
+  background: var(--primary-color);
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
@@ -80,7 +81,7 @@
   font-weight: bold;
   height: 40px;
   font-size: 16px;
-  box-shadow: 0 2px 4px var(--gray-color);
+  box-shadow: 0 2px 4px var(--primary-color);
 }
 
 .cancel-button:hover {
@@ -93,7 +94,7 @@
   font-weight: bold;
   height: 40px;
   font-size: 16px;
-  box-shadow: 0 2px 4px var(--gray-color);
+  box-shadow: 0 2px 4px var(--primary-color);
 }
 
 .adopted-button:hover {
