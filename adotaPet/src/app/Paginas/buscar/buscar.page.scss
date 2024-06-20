@@ -2,16 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   text-align: center;
   color: var(--primary-color);
   padding: 20px;
-  padding-bottom: 70px; /* Espaço para o rodapé */
 }
 
 .logo {
-  box-shadow: 0 10px 10px 0 var(--black-color);
-  border-radius: 0 0 14px 14px;
+
   margin-bottom: 20px;
 }
 
@@ -19,91 +17,90 @@
   width: 100%;
   max-width: 400px;
   margin-bottom: 20px;
-  background-color: var(--primary-color);
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 15px;
 }
 
 .search-item {
+  width: 100%;
+  --background: var(--background-color);
+  --inner-border-width: 0px;
+  --border-color: transparent;
   margin-bottom: 10px;
-  --background: none;
-  --color: var(--primary-color);
 }
 
 .search-input {
   width: 100%;
-  background-color: var(--color-input);
-  padding: 10px;
-  margin: 10px 0;
+  background: var(--gray-color);
   color: var(--black-color);
   border-radius: 8px;
-  box-shadow: 0 2px 4px var(--gray-color);}
+  padding-left: 10px;
+}
 
 .search-button {
-  box-shadow: 0 2px 4px var(--black-color);
   --background: var(--secondary-color);
   --color: var(--black-color);
   font-weight: bold;
   height: 50px;
   font-size: 18px;
+  box-shadow: 0 2px 4px var(--gray-color);
+  margin-top: 10px;
 }
 
 .search-button:hover {
-  --background: #00a999;
+  --background: var(--primary-color);
 }
 
 .results-title {
   font-size: 24px;
-  margin-bottom: 20px;
   color: var(--primary-color);
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .result-card {
-  width: 100%;
-  max-width: 600px;
-  background-color: var(--secondary-color);
-  border-radius: 10px;
-  box-shadow: 0 2px 4px var(--black-color);
   display: flex;
   align-items: center;
-  padding: 15px;
+  justify-content: space-between;
+  background: var(--gray-color);
+  padding: 20px;
+  border-radius: 8px;
   margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .profile-image {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
 .result-info {
-  flex: 1;
+  flex-grow: 1;
   text-align: left;
   color: var(--black-color);
-
 }
 
 .result-info h2 {
+  margin: 0 0 5px;
   font-size: 20px;
-  margin: 0;
-
 }
 
 .result-info p {
-  margin: 5px 0;
-
+  margin: 0 0 5px;
 }
 
 .adopt-button {
+  --background: var(--secondary-color);
   --color: var(--black-color);
   font-weight: bold;
   height: 40px;
   font-size: 16px;
+  box-shadow: 0 2px 4px var(--gray-color);
+}
+
+.adopt-button:hover {
   --background: var(--primary-color);
-  box-shadow: 0 2px 4px var(--black-color);
-  border-radius: 10px;
 }
 
 /* Estilos do rodapé */
@@ -112,7 +109,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  }
+}
 
 .footer-toolbar {
   --background: var(--primary-color);
@@ -133,5 +130,5 @@
 
 .footer-tab-bar ion-tab-button:hover ion-icon,
 .footer-tab-bar ion-tab-button:hover ion-label {
-  color: var(--text-color);
+  color: var(--third-color);
 }

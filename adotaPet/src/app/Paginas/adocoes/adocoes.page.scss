@@ -2,18 +2,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  overflow-y: auto;
+  justify-content: center;
   text-align: center;
   color: var(--primary-color);
   padding: 20px;
-  padding-bottom: 70px; /* Espaço para o rodapé */
+}
+
+.logo {
+
+  margin-bottom: 20px;
 }
 
 .adoptions-title {
-  margin-bottom: 20px;
   font-size: 32px;
   color: var(--primary-color);
+  margin-bottom: 20px;
 }
 
 .schedule-button {
@@ -22,67 +25,79 @@
   font-weight: bold;
   height: 50px;
   font-size: 18px;
+  box-shadow: 0 2px 4px var(--gray-color);
   margin-bottom: 20px;
+}
+
+.schedule-button:hover {
+  --background: var(--primary-color);
 }
 
 .section-title {
-  width: 100%;
-  max-width: 600px;
   font-size: 24px;
   color: var(--primary-color);
-  text-align: left;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.adoption-card {
-  width: 100%;
-  max-width: 600px;
-  background-color: var(--secondary-color);
-  border-radius: 10px;
-  box-shadow: 0 2px 4px var(--black-color);
-  display: flex;
-  align-items: center;
-  padding: 15px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 
+.adoption-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--gray-color);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
 .profile-image {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
 .adoption-info {
-  flex: 1;
+  flex-grow: 1;
   text-align: left;
   color: var(--black-color);
 }
 
 .adoption-info h2 {
+  margin: 0 0 5px;
   font-size: 20px;
-  margin: 0;
 }
 
 .adoption-info p {
-  margin: 5px 0;
+  margin: 0 0 5px;
 }
 
-.cancel-button, .adopted-button {
+.cancel-button {
+  --background: var(--secondary-color);
   --color: var(--black-color);
   font-weight: bold;
   height: 40px;
   font-size: 16px;
-  margin-top: 10px;
+  box-shadow: 0 2px 4px var(--gray-color);
 }
 
-.cancel-button {
-  --background: #d9534f;
+.cancel-button:hover {
+  --background: var(--primary-color);
 }
 
 .adopted-button {
-  --background: var(--text-color);
+  --background: var(--secondary-color);
+  --color: var(--black-color);
+  font-weight: bold;
+  height: 40px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px var(--gray-color);
+}
+
+.adopted-button:hover {
+  --background: var(--primary-color);
 }
 
 /* Estilos do rodapé */
@@ -91,7 +106,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  }
+}
 
 .footer-toolbar {
   --background: var(--primary-color);
@@ -101,7 +116,7 @@
 
 .footer-tab-bar {
   --background: var(--primary-color);
-  --color: var(--third-color);
+  --color: var(--background-color);
   display: flex;
   justify-content: space-around;
 }
