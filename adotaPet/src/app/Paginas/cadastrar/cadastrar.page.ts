@@ -12,29 +12,27 @@ export class CadastrarPage {
   senha: string = '';
   confirmarSenha: string = '';
 
-  constructor(private navCtrl: NavController, private toastCtrl: ToastController) {}
+  constructor(private navCtrl: NavController,
+              private toastCtrl: ToastController) {}
 
   registrar() {
-    // Verifica se todos os campos estão preenchidos
+    console.log('registrar() chamado'); // Verificar se isso aparece duas vezes no console quando clicado uma vez
+
     if (!this.nome || !this.email || !this.senha || !this.confirmarSenha) {
       this.presentToast('Por favor, preencha todos os campos.');
       return;
     }
 
-    // Verifica se as senhas coincidem
     if (this.senha !== this.confirmarSenha) {
       this.presentToast('As senhas não coincidem.');
       return;
     }
 
-    // Aqui você pode implementar a lógica para registrar o usuário
-    // Exemplo simples: exibir os dados registrados
     console.log('Nome:', this.nome);
     console.log('Email:', this.email);
     console.log('Senha:', this.senha);
 
-    // Navegar para a página de login após o registro
-    this.navCtrl.navigateForward('/informacoes-pessoais'); // Substitua '/login' pela rota da sua página de login
+    this.navCtrl.navigateForward('/informacoes-pessoais');
   }
 
   cancelar() {

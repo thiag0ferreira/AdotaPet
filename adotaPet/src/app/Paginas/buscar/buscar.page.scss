@@ -7,11 +7,9 @@
   color: var(--primary-color);
   padding: 20px;
   padding-bottom: 40px;
-
 }
 
 .logo {
-
   margin-bottom: 20px;
 }
 
@@ -19,10 +17,9 @@
   width: 100%;
   max-width: 400px;
   margin-bottom: 20px;
-  background: var(--primary-color); /* Defina a cor de fundo desejada */
+  background: var(--primary-color);
   padding: 20px;
   border-radius: 8px;
-
 }
 
 .search-item {
@@ -137,4 +134,70 @@
 .footer-tab-bar ion-tab-button:hover ion-icon,
 .footer-tab-bar ion-tab-button:hover ion-label {
   color: var(--third-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .search-box {
+    padding: 15px;
+  }
+
+  .search-button {
+    font-size: 16px;
+    height: 45px;
+  }
+
+  .results-title {
+    font-size: 22px;
+  }
+
+  .result-card {
+    padding: 15px;
+  }
+
+  .result-info h2 {
+    font-size: 18px;
+  }
+
+  .result-info p {
+    font-size: 14px;
+  }
+
+  .adopt-button {
+    font-size: 14px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-box {
+    padding: 10px;
+  }
+
+  .search-button {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  .results-title {
+    font-size: 20px;
+  }
+
+  .result-card {
+
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-image {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .adopt-button {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    height: 35px;
+  }
 }

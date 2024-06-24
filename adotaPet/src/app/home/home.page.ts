@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -7,15 +8,43 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  email: string = '';
+  password: string = '';
 
-  constructor(private navCtrl: NavController) {}
+  constructor(
+    private navCtrl: NavController,
+    private toastCtrl: ToastController,
+    private http: HttpClient
+  ) {}
 
+  async login() {
+    if (!this.email || !this.password) {
+      this.presentToast('Por favor, preencha todos os campos.');
+      return;
+    }
 
-  bemvindo() {
-    this.navCtrl.navigateForward('/bemvindo');
+    try {
+      const response: any = await this.http.post('http://localhost:3000/auth/login', {
+        email: this.email,
+        password: this.password
+      }).toPromise();
+
+      // Salvar o token no localStorage
+      localStorage.setItem('token', response.token);
+
+      this.presentToast('Login realizado com sucesso!');
+      this.navCtrl.navigateForward('/bemvindo');
+    } catch (error) {
+      this.presentToast('Email ou senha inválidos.');
+    }
   }
 
-  login($event: SubmitEvent) {
-
+  async presentToast(message: string) {
+    const toast = await this.toastCtrl.create({
+      message,
+      duration: 3000,
+      position: 'bottom'
+    });
+    toast.present();
   }
 }

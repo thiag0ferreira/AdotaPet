@@ -1,6 +1,6 @@
-import { Component, OnInit, AfterViewInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {AlertController, ToastController} from '@ionic/angular'; // Importe o AlertController e o ToastController
+import {AlertController, ToastController, NavController} from '@ionic/angular'; // Importe o AlertController e o ToastController
 
 @Component({
   selector: 'app-informacoes-pessoais',
@@ -17,34 +17,34 @@ export class InformacoesPessoaisPage implements OnInit, AfterViewInit {
   constructor(
     private router: Router,
     private alertController: AlertController, // Injete o AlertController
-    private renderer: Renderer2,
-    private toastCtrl: ToastController // Injete o ToastController
+    private toastCtrl: ToastController, // Injete o ToastController
+    private navCtrl: NavController
   ) { }
 
   ngOnInit() {
   }
 
-  ngAfterViewInit() {
-    const telefoneInput = this.renderer.selectRootElement('ion-input[ngModel="telefone"]', true);
-
-    this.renderer.listen(telefoneInput, 'input', (event) => {
-      const input = event.target;
-      let value = input.value.replace(/\D/g, '');
-      const length = value.length;
-
-      if (length <= 10) {
-        value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
-      } else {
-        value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-      }
-
-      // Atualize o valor do input
-      this.renderer.setProperty(input, 'value', value);
-    });
-  }
+  ngAfterViewInit() {}
+  //   const telefoneInput = this.renderer.selectRootElement('ion-input[ngModel="telefone"]', true);
+  //
+  //   this.renderer.listen(telefoneInput, 'input', (event) => {
+  //     const input = event.target;
+  //     let value = input.value.replace(/\D/g, '');
+  //     const length = value.length;
+  //
+  //     if (length <= 10) {
+  //       value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+  //     } else {
+  //       value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+  //     }
+  //
+  //     // Atualize o valor do input
+  //     this.renderer.setProperty(input, 'value', value);
+  //   });
+  // }
 
   voltar() {
-    this.router.navigate(['/cadastrar']); // Navega de volta para a página de cadastro
+    this.navCtrl.navigateBack(['/cadastrar']); // Navega de volta para a página de cadastro
   }
 
   async registrar() {

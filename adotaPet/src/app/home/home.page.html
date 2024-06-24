@@ -6,16 +6,16 @@
 
     <ion-item class="login-item">
       <ion-label class="login-label" position="stacked"><b>Email</b></ion-label>
-      <ion-input class="login-input" type="email" placeholder="Insira seu endereço de email"></ion-input>
+      <ion-input class="login-input" type="email" [(ngModel)]="email" placeholder="Insira seu endereço de email" required></ion-input>
     </ion-item>
 
     <ion-item class="login-item">
       <ion-label class="login-label" position="stacked"><b>Senha</b></ion-label>
-      <ion-input class="login-input" type="password" placeholder="Insira sua senha"></ion-input>
+      <ion-input class="login-input" type="password" [(ngModel)]="password" placeholder="Insira sua senha" required></ion-input>
     </ion-item>
 
     <div class="button-container">
-      <ion-button class="login-button" expand="block" (click)="bemvindo()"><strong>Entrar</strong></ion-button>
+      <ion-button class="login-button" expand="block" (click)="login()"><strong>Entrar</strong></ion-button>
     </div>
 
     <a class="forgot-password" href="#">Esqueceu sua senha?</a>
