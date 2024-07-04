@@ -11,6 +11,7 @@
 
 .logo {
   margin-bottom: 20px;
+  width: auto;
 }
 
 .search-box {
@@ -27,7 +28,8 @@
   --background: var(--primary-color);
   --inner-border-width: 0px;
   --border-color: transparent;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+
 }
 
 .search-input {
@@ -35,7 +37,8 @@
   background: var(--background-color);
   color: var(--black-color);
   border-radius: 8px;
-  padding-left: 10px;
+  padding-left: 10px !important;
+
 }
 
 .search-button {
@@ -44,7 +47,6 @@
   font-weight: bold;
   height: 50px;
   font-size: 18px;
-  box-shadow: 0 2px 4px var(--third-color);
   margin-top: 10px;
 }
 
@@ -134,70 +136,4 @@
 .footer-tab-bar ion-tab-button:hover ion-icon,
 .footer-tab-bar ion-tab-button:hover ion-label {
   color: var(--third-color);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .search-box {
-    padding: 15px;
-  }
-
-  .search-button {
-    font-size: 16px;
-    height: 45px;
-  }
-
-  .results-title {
-    font-size: 22px;
-  }
-
-  .result-card {
-    padding: 15px;
-  }
-
-  .result-info h2 {
-    font-size: 18px;
-  }
-
-  .result-info p {
-    font-size: 14px;
-  }
-
-  .adopt-button {
-    font-size: 14px;
-    height: 35px;
-  }
-}
-
-@media (max-width: 480px) {
-  .search-box {
-    padding: 10px;
-  }
-
-  .search-button {
-    font-size: 14px;
-    height: 40px;
-  }
-
-  .results-title {
-    font-size: 20px;
-  }
-
-  .result-card {
-
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .profile-image {
-    margin-bottom: 10px;
-    margin-right: 0;
-  }
-
-  .adopt-button {
-    width: 100%;
-    text-align: center;
-    font-size: 12px;
-    height: 35px;
-  }
 }

@@ -45,6 +45,13 @@ const routes: Routes = [
     path: 'buscar',
     loadChildren: () => import('./Paginas/buscar/buscar.module').then( m => m.BuscarPageModule)
   },
+  {
+    path: 'detalhes-pet/:id',
+    loadChildren: () => import('./Paginas/detalhes-pet/detalhes-pet.module').then( m => m.DetalhesPetPageModule)
+  },
+
+
+
 
 
 

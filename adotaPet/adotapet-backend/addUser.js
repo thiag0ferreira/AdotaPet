@@ -10,6 +10,7 @@ mongoose.connect('mongodb://localhost/adotapet', {
 const addUser = async () => {
   try {
     const newUser = new User({
+      name: 'Test User',
       email: 'test@email.com',
       password: 'test1234'
     });

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, ToastController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-cadastrar',
@@ -12,12 +13,11 @@ export class CadastrarPage {
   senha: string = '';
   confirmarSenha: string = '';
 
-  constructor(private navCtrl: NavController,
+  constructor(private http: HttpClient,
+              private navCtrl: NavController,
               private toastCtrl: ToastController) {}
 
   registrar() {
-    console.log('registrar() chamado'); // Verificar se isso aparece duas vezes no console quando clicado uma vez
-
     if (!this.nome || !this.email || !this.senha || !this.confirmarSenha) {
       this.presentToast('Por favor, preencha todos os campos.');
       return;
@@ -28,11 +28,21 @@ export class CadastrarPage {
       return;
     }
 
-    console.log('Nome:', this.nome);
-    console.log('Email:', this.email);
-    console.log('Senha:', this.senha);
-
-    this.navCtrl.navigateForward('/informacoes-pessoais');
+    this.http.post('http://localhost:3000/user/register', { nome: this.nome, email: this.email, senha: this.senha })
+      .subscribe({
+        next: (response) => {
+          console.log('Resposta do servidor:', response);
+          this.presentToast('Cadastro realizado com sucesso!');
+          console.log('Navegando para /informacoes-pessoais');
+          this.navCtrl.navigateForward('/informacoes-pessoais').then(() => {
+            console.log('Navegou para /informacoes-pessoais');
+          });
+        },
+        error: (error) => {
+          this.presentToast('Erro no cadastro.');
+          console.error(error);
+        }
+      });
   }
 
   cancelar() {

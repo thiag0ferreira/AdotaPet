@@ -16,18 +16,23 @@
 }
 
 .welcome-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 32px;
   color: var(--primary-color);
   margin-bottom: 20px;
 }
 
-.search-container {
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
-  background: var(--primary-color); /* Defina a cor de fundo desejada */
-  padding: 20px;
+.intro{
+  background: var(--gray-color);
+  color: black;
+  padding: 10px;
   border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+  font-size: 20px;
 }
 
 .search-item {
@@ -72,7 +77,7 @@
   font-weight: bold;
   height: 50px;
   font-size: 18px;
-  box-shadow: 0 2px 4px var(--gray-color);
+
 }
 
 .register-pet-button ion-button:hover {

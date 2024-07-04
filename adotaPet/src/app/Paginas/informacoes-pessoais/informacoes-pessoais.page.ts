@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http'; // Importe o HttpClient
 import { Router } from '@angular/router';
 import {AlertController, ToastController, NavController} from '@ionic/angular'; // Importe o AlertController e o ToastController
 
@@ -15,6 +16,7 @@ export class InformacoesPessoaisPage implements OnInit, AfterViewInit {
   telefone: string = '';
 
   constructor(
+    private http: HttpClient,
     private router: Router,
     private alertController: AlertController, // Injete o AlertController
     private toastCtrl: ToastController, // Injete o ToastController
@@ -52,33 +54,19 @@ export class InformacoesPessoaisPage implements OnInit, AfterViewInit {
       this.presentToast('Por favor, preencha todos os campos.');
       return;
     }
-     {
-      // Aqui você pode implementar a lógica para registrar as informações pessoais
-      // Por exemplo, enviar os dados para um serviço backend ou salvar localmente
 
-      // Exemplo de registro simulado com console.log
-      console.log('Dados a serem registrados:');
-      console.log('CEP:', this.cep);
-      console.log('Endereço:', this.endereco);
-      console.log('Número:', this.numero);
-      console.log('Complemento:', this.complemento);
-      console.log('Telefone:', this.telefone);
-
-      // Exemplo de navegação para a próxima página após o registro
-
-
-      // Exibir alerta de sucesso
-      const alert = await this.alertController.create({
-        header: 'Sucesso!',
-        message: 'Cadastro realizado com sucesso.',
-        buttons: ['OK']
-
-      });
-       this.router.navigate(['/home']); // Navega para a página de login após o registro
-
-      await alert.present();
-
-    }
+    this.http.post('http://localhost:3000/api/userInfo', {
+      cep: this.cep, endereco: this.endereco, numero: this.numero, complemento: this.complemento, telefone: this.telefone, userId: 'userID' // Substitua 'userID' pelo ID do usuário
+    }).subscribe({
+      next: (response) => {
+        this.presentToast('Informações registradas com sucesso!');
+        this.router.navigate(['/home']);
+      },
+      error: (error) => {
+        this.presentToast('Erro ao registrar informações.');
+        console.error(error);
+      }
+    });
   }
 
   async presentToast(message: string) {

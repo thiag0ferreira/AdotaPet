@@ -1,53 +1,29 @@
 <ion-content class="ion-padding">
   <div class="search-container">
-    <img src="./assets/icon/adotapet.png" alt="AdotaPet" class="logo">
+    <img src="./assets/icon/logo3.png" alt="AdotaPet" class="logo">
 
     <div class="search-box">
       <ion-item class="search-item">
-        <ion-input class="search-input" type="text" placeholder="Digite o animal que procura"></ion-input>
+        <ion-label position="floating">Nome do Pet</ion-label>
+        <ion-input class="search-input" [(ngModel)]="searchTerm" type="text" placeholder="Busque por nome"></ion-input>
       </ion-item>
       <ion-item class="search-item">
-        <ion-input class="search-input" type="text" placeholder="Digite sua localização"></ion-input>
+        <ion-label position="floating">Localização</ion-label>
+        <ion-input class="search-input" [(ngModel)]="searchLocation" type="text" placeholder="Digite sua localização"></ion-input>
       </ion-item>
-      <ion-button class="search-button" expand="block"><strong>Buscar</strong></ion-button>
+      <ion-button class="search-button" expand="block" (click)="searchPets()"><strong>Buscar</strong></ion-button>
     </div>
 
     <h2 class="results-title"><strong>Resultado da busca</strong></h2>
 
-    <div class="result-card">
-      <img src="./assets/dog1.jpg" alt="Profile" class="profile-image">
+    <div class="result-card" *ngFor="let pet of pets">
+      <img [src]="pet.foto" alt="Foto do Pet" class="profile-image">
       <div class="result-info">
-        <h2>Suki</h2>
-        <p>Cachorro</p>
-      </div>
-      <ion-button class="adopt-button">Solicitar Adoção</ion-button>
-    </div>
+        <h2>{{ pet.nome }}</h2>
+        <p>{{ pet.especie }}</p>
+        <ion-button class="search-button" (click)="solicitarAdocao(pet._id)">Solicitar Adoção</ion-button>
 
-    <div class="result-card">
-      <img src="./assets/cat.jpg" alt="Profile" class="profile-image">
-      <div class="result-info">
-        <h2>Chiquinha</h2>
-        <p>Gata</p>
       </div>
-      <ion-button class="adopt-button">Solicitar Adoção</ion-button>
-    </div>
-
-    <div class="result-card">
-      <img src="./assets/dog2.png" alt="Profile" class="profile-image">
-      <div class="result-info">
-        <h2>Totó</h2>
-        <p>Cachorro</p>
-      </div>
-      <ion-button class="adopt-button">Solicitar Adoção</ion-button>
-    </div>
-
-    <div class="result-card">
-      <img src="./assets/dog3.jpg" alt="Profile" class="profile-image">
-      <div class="result-info">
-        <h2>Sila</h2>
-        <p>Gata</p>
-      </div>
-      <ion-button class="adopt-button">Solicitar Adoção</ion-button>
     </div>
   </div>
 
@@ -68,7 +44,7 @@
 
           <ion-tab-button tab="explorar" (click)="buscar()">
             <ion-icon name="search"></ion-icon>
-            <ion-label>Explorar</ion-label>
+            <ion-label>Adotar</ion-label>
           </ion-tab-button>
 
           <ion-tab-button tab="perfil"  (click)="perfil()">

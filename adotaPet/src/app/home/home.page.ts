@@ -29,12 +29,14 @@ export class HomePage {
         password: this.password
       }).toPromise();
 
-      // Salvar o token no localStorage
+      // Salvar o token e o email no localStorage
       localStorage.setItem('token', response.token);
+      localStorage.setItem('email', this.email);
 
       this.presentToast('Login realizado com sucesso!');
       this.navCtrl.navigateForward('/bemvindo');
     } catch (error) {
+      console.error(error);
       this.presentToast('Email ou senha inválidos.');
     }
   }
