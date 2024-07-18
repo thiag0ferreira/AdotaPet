@@ -29,7 +29,6 @@
   --inner-border-width: 0px;
   --border-color: transparent;
   margin-bottom: 15px;
-
 }
 
 .search-input {
@@ -38,7 +37,6 @@
   color: var(--black-color);
   border-radius: 8px;
   padding-left: 10px !important;
-
 }
 
 .search-button {
@@ -61,54 +59,37 @@
   margin-bottom: 20px;
 }
 
-.result-card {
+.results-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--primary-color);
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
-  max-width: 600px;
+}
+
+.pet-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-color);
+  border-radius: 8px;
+  margin: 10px;
+  width: calc(50% - 20px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .profile-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-right: 20px;
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
-.result-info {
-  flex-grow: 1;
-  text-align: left;
-  color: var(--black-color);
+.pet-info {
+  padding: 10px;
+  text-align: center;
 }
 
-.result-info h2 {
-  margin: 0 0 5px;
-  font-size: 20px;
-}
-
-.result-info p {
-  margin: 0 0 5px;
-}
-
-.adopt-button {
-  --background: var(--secondary-color);
-  --color: var(--black-color);
-  font-weight: bold;
-  height: 40px;
-  font-size: 16px;
-  box-shadow: 0 2px 4px var(--primary-color);
-}
-
-.adopt-button:hover {
-  --background: var(--primary-color);
-}
-
-/* Estilos do rodapé */
 .footer {
   position: fixed;
   bottom: 0;

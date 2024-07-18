@@ -16,18 +16,18 @@
 
     <h2 class="results-title"><strong>Resultado da busca</strong></h2>
 
-    <div class="result-card" *ngFor="let pet of pets">
-      <img [src]="pet.foto" alt="Foto do Pet" class="profile-image">
-      <div class="result-info">
-        <h2>{{ pet.nome }}</h2>
-        <p>{{ pet.especie }}</p>
-        <ion-button class="search-button" (click)="solicitarAdocao(pet._id)">Solicitar Adoção</ion-button>
-
+    <div class="results-container">
+      <div *ngFor="let pet of pets" class="pet-card">
+        <img [src]="pet.foto" alt="Foto do Pet" class="profile-image">
+        <div class="pet-info">
+          <h2>{{ pet.nome }}</h2>
+          <p>{{ pet.especie }}</p>
+          <ion-button class="search-button" (click)="solicitarAdocao(pet._id)">Solicitar Adoção</ion-button>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Rodapé -->
   <ion-footer class="footer">
     <ion-toolbar class="footer-toolbar">
       <ion-tabs>
